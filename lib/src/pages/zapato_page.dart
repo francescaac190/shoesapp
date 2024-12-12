@@ -3,12 +3,12 @@ import 'package:shoesapp/src/helpers/helpers.dart';
 import 'package:shoesapp/src/widgets/custom_widgets.dart';
 
 class ZapatoPage extends StatelessWidget {
+  const ZapatoPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     cambiarStatusDark();
-    return Scaffold(
-      // body: CustomAppBar(texto: 'For you'),
-      //body: ZapatoSizePreview(),
+    return const Scaffold(
       body: Column(
         children: <Widget>[
           CustomAppBar(texto: 'For you'),
@@ -17,7 +17,7 @@ class ZapatoPage extends StatelessWidget {
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               child: Column(
-                children: const <Widget>[
+                children: <Widget>[
                   Hero(tag: 'zapato-1', child: ZapatoSizePreview()),
                   ZapatoDescripcion(
                     titulo: 'Nike Air Max 720',

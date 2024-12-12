@@ -1,7 +1,5 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
+import 'package:shoesapp/src/pages/carritos_page.dart';
 
 class BotonNaranja extends StatelessWidget {
   final String texto;
@@ -9,24 +7,35 @@ class BotonNaranja extends StatelessWidget {
   final double ancho;
   final Color color;
   const BotonNaranja(
-      {required this.texto,
+      {super.key,
+      required this.texto,
       this.alto = 50,
       this.ancho = 150,
       this.color = Colors.orange});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      width: this.ancho,
-      height: this.alto,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-        color: this.color,
-      ),
-      child: Text(
-        '$texto',
-        style: TextStyle(color: Colors.white),
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const CarritoPage(),
+          ),
+        );
+      },
+      child: Container(
+        alignment: Alignment.center,
+        width: ancho,
+        height: alto,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+          color: color,
+        ),
+        child: Text(
+          texto,
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
     );
   }

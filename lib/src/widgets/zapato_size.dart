@@ -17,7 +17,7 @@ class ZapatoSizePreview extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (BuildContext context) => ZapatoDescPage()));
+                  builder: (BuildContext context) => const ZapatoDescPage()));
         }
       },
       child: Padding(
@@ -56,11 +56,11 @@ class _ZapatoTalla extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const <Widget>[
+        children: <Widget>[
           _CajaTalla(7),
           _CajaTalla(7.5),
           _CajaTalla(8),
@@ -88,16 +88,6 @@ class _CajaTalla extends StatelessWidget {
       },
       child: Container(
         alignment: Alignment.center,
-        child: Text(
-          '${numero.toString().replaceAll('.0', '')}',
-          style: TextStyle(
-            color: (numero == zapatoModel.talla)
-                ? Colors.white
-                : const Color(0xffF1A23A),
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
         width: 45,
         height: 45,
         decoration: BoxDecoration(
@@ -113,6 +103,16 @@ class _CajaTalla extends StatelessWidget {
                 offset: Offset(0, 5),
               )
           ],
+        ),
+        child: Text(
+          numero.toString().replaceAll('.0', ''),
+          style: TextStyle(
+            color: (numero == zapatoModel.talla)
+                ? Colors.white
+                : const Color(0xffF1A23A),
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

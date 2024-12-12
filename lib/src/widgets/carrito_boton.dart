@@ -4,7 +4,7 @@ import 'package:shoesapp/src/widgets/custom_widgets.dart';
 class AgregarCarritoBotone extends StatelessWidget {
   final double monto;
 
-  const AgregarCarritoBotone({required this.monto});
+  const AgregarCarritoBotone({super.key, required this.monto});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,14 +18,14 @@ class AgregarCarritoBotone extends StatelessWidget {
         ),
         child: Row(
           children: <Widget>[
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Text(
               '\$$monto',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
-            Spacer(),
-            BotonNaranja(texto: 'Add to cart'),
-            SizedBox(width: 20),
+            const Spacer(),
+            const BotonNaranja(texto: 'Add to cart'),
+            const SizedBox(width: 20),
           ],
         ),
       ),
